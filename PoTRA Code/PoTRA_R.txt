@@ -1,6 +1,11 @@
 ## Purpose: To troubleshoot PoTRA code and make improvements where possible ##
 ## Contributor: MLinan 
-## Add package root its needed for imports (important:package ‘root’ is not available (for R Under development))
+## Helpful links: https://cran.r-project.org/web/packages/import/vignettes/import.html
+##
+##
+## History of error messages
+## 1 :: Add package root its needed for imports (important:package ‘root’ is not available (for R Under development))
+## 2 :: Error: Could not find package root
 
 PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile) {
  ########code not used########
