@@ -12,13 +12,18 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
  
  #### New code added by ML on 3.16.2018 ###
  ## Will be tested today ##
+ devtools::install_deps(deps = TRUE)
+ devtools::load_all()
+ 
  devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
  devtools::use_package("graph", type = "Imports", pkg = ".")
  devtools::use_package("graphite", type = "Imports", pkg = ".")
  devtools::use_package("igraph", type = "Imports", pkg = ".")
  devtools::use_package("org.Hs.eg.db", type = "Imports", pkg = ".") 
+  
  import::from(graphite, humanReactome, humanKEGG, humanBiocarta)
  import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
+ 
  
  ###########################################
   
@@ -190,6 +195,10 @@ PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.
   
  #### New code added by ML on 3.16.2018 ###
  ## Will be tested today ##
+ 
+ devtools::install_deps(deps = TRUE)
+ devtools::load_all()
+ 
  devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
  devtools::use_package("graph", type = "Imports", pkg = ".")
  devtools::use_package("graphite", type = "Imports", pkg = ".")
@@ -348,6 +357,9 @@ overlayplot<-function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.
   
  #### New code added by ML on 3.16.2018 ###
  ## Will be tested today ##
+ devtools::install_deps(deps = TRUE)
+ devtools::load_all()
+ 
  devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
  devtools::use_package("graph", type = "Imports", pkg = ".")
  devtools::use_package("graphite", type = "Imports", pkg = ".")
