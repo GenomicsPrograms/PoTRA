@@ -10,7 +10,7 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
  # require(igraph)https://github.com/GenomicsPrograms/PoTRA/blob/master/PoTRA%20Code/PoTRA_R.txt
  ###############################
  
- #### New code added by ML on 3.15.2018 ###
+ #### New code added by ML on 3.16.2018 ###
  ## Will be tested today ##
  devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
  devtools::use_package("graph", type = "Imports", pkg = ".")
@@ -188,13 +188,13 @@ PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.
  # require(igraph)
  ####################################
   
- #### New code added by ML on 3.15.2018 ###
+ #### New code added by ML on 3.16.2018 ###
  ## Will be tested today ##
- devtools::use_package("BiocGenerics")
- devtools::use_package("graph") 
- devtools::use_package("graphite")
- devtools::use_package("igraph")
- devtools::use_package("org.Hs.eg.db") 
+ devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
+ devtools::use_package("graph", type = "Imports", pkg = ".")
+ devtools::use_package("graphite", type = "Imports", pkg = ".")
+ devtools::use_package("igraph", type = "Imports", pkg = ".")
+ devtools::use_package("org.Hs.eg.db", type = "Imports", pkg = ".") 
  import::from(graphite, humanReactome, humanKEGG, humanBiocarta)
  import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
  
@@ -345,16 +345,18 @@ overlayplot<-function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.
  # require(graphite)
  # require(igraph)
   
- #### New code added by ML on 3.15.2018 ###
+  
+ #### New code added by ML on 3.16.2018 ###
  ## Will be tested today ##
- devtools::use_package("BiocGenerics")
- devtools::use_package("graph") 
- devtools::use_package("graphite")
- devtools::use_package("igraph")
- devtools::use_package("org.Hs.eg.db") 
+ devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
+ devtools::use_package("graph", type = "Imports", pkg = ".")
+ devtools::use_package("graphite", type = "Imports", pkg = ".")
+ devtools::use_package("igraph", type = "Imports", pkg = ".")
+ devtools::use_package("org.Hs.eg.db", type = "Imports", pkg = ".") 
  import::from(graphite, humanReactome, humanKEGG, humanBiocarta)
  import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
  
+ ###########################################
  ###########################################
   
   length.pathway<-c()
