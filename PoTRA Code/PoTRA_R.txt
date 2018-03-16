@@ -231,7 +231,7 @@ PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.
     }else{
       
       #collect expression data of genes for a specific pathway across normal and tumor samples.
-      ***
+     
       
       
       path<-data.frame(matrix(0,length.intersect,(Num.sample.normal+Num.sample.case)))
