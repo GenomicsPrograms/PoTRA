@@ -26,7 +26,7 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
  devtools::use_package("igraph", type = "Imports", pkg = ".")
  devtools::use_package("org.Hs.eg.db", type = "Imports", pkg = ".") 
   
- import::from(graphite, humanReactome, humanKEGG, humanBiocarta, .into=".")
+ import::from(graphite, humanReactome, humanKEGG, humanBiocarta, .into= graphite)
  import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
  
  
