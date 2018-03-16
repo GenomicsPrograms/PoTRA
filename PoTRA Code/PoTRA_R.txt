@@ -45,13 +45,17 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
     length.pathway[x]<-length.intersect
     
     graph.path<-induced_subgraph(graph.path, as.character(intersect(unlist(nodelist),unlist(genelist))))
+    ####code added by ML 3.15.2018 #######
+    print("Progress.......Setting Up")    
     
     if (length.intersect<5){
       next
     }else{
       
       #collect expression data of genes for a specific pathway across normal and tumor samples.
-      
+    ####code added by ML 3.15.2018 #######
+    print("Progress.......Collecting expression data of genes for a specific pathway across normal and tumor samples")  
+    
       path<-data.frame(matrix(0,length.intersect,(Num.sample.normal+Num.sample.case)))
       a<- c()
       
@@ -62,6 +66,10 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
       }
       
       ##Construct a gene-gene network for normal samples and calculate PageRank values for each gene in this network.
+    
+    ####code added by ML 3.15.2018 #######
+     print("Progress.......Constructing a gene-gene network for normal samples and calculate PageRank values for each gene in this network")
+      
       
       cor.normal <- apply(path[,1:Num.sample.normal], 1, function(x) { apply(path[,1:Num.sample.normal], 1, function(y) { cor.test(x,y)[[3]] })})
       
@@ -84,7 +92,11 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
       PR.union.normal<-page.rank(graph.union.normal,direct=FALSE)$vector
       
       ##Construct a gene-gene network for tumor samples and calculate PageRank values for each gene in this network.
-      
+     
+     ####code added by ML 3.15.2018 #######
+     print("Progress.......Constructing a gene-gene network for tumor samples and calculate PageRank values for each gene in this network")
+     
+     
       cor.case <- apply(path[,(Num.sample.normal+1):(Num.sample.normal+Num.sample.case)], 1, function(x) { apply(path[,(Num.sample.normal+1):(Num.sample.normal+Num.sample.case)], 1, function(y) { cor.test(x,y)[[3]] })})
       
       cor.case<-as.matrix(cor.case) 
@@ -130,6 +142,11 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
       TheNumOfHubGene.normal[x]<-cont.HCC[2]
       TheNumOfHubGene.case[x]<-cont.HCC[1]
       
+      
+      ####code added by ML 3.15.2018 #######
+      print("Progress.......Applying Fisher's Exact Test and Kolmogorov Smirnov")
+      
+      
       if (dim(cont.HCC)[1]!=dim(cont.HCC)[2]){
         Fishertest[x]<-1
       }else{
@@ -148,7 +165,11 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
       ############################################
     }
   }
-  return(list(Fishertest.p.value=Fishertest,KStest.p.value=kstest,LengthOfPathway=length.pathway,TheNumberOfHubGenes.normal=TheNumOfHubGene.normal,TheNumOfHubGene.case=TheNumOfHubGene.case,TheNumberOfEdges.normal=E.union.normal,TheNumberOfEdges.case=E.union.case))
+  
+
+      ####code added by ML 3.15.2018 #######
+      print("Progress.......Preparing Results")
+      return(list(Fishertest.p.value=Fishertest,KStest.p.value=kstest,LengthOfPathway=length.pathway,TheNumberOfHubGenes.normal=TheNumOfHubGene.normal,TheNumOfHubGene.case=TheNumOfHubGene.case,TheNumberOfEdges.normal=E.union.normal,TheNumberOfEdges.case=E.union.case))
 }
 
 
@@ -299,12 +320,23 @@ PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.
 
 
 overlayplot<-function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database) {
+ ## Code will not be used ### 
+ # require(BiocGenerics)
+ # require(graph)
+ # require(graphite)
+ # require(igraph)
   
-  require(BiocGenerics)
-  require(graph)
-  require(graphite)
-  require(igraph)
-  
+ #### New code added by ML on 3.15.2018 ###
+ ## Will be tested today ##
+ devtools::use_package("BiocGenerics")
+ devtools::use_package("graph") 
+ devtools::use_package("graphite")
+ devtools::use_package("igraph")
+ devtools::use_package("org.Hs.eg.db") 
+ import::from(graphite, humanReactome, humanKEGG, humanBiocarta)
+ import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
+ 
+ ###########################################
   
   length.pathway<-c()
   
