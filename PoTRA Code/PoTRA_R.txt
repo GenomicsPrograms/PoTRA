@@ -18,7 +18,7 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
  #### New code added by ML on 3.16.2018 ###
  ## Will be tested today ##
  devtools::install_deps(deps = TRUE)
- devtools::load_all()
+ #devtools::load_all()
  
  devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
  devtools::use_package("graph", type = "Imports", pkg = ".")
