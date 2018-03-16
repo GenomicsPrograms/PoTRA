@@ -1,19 +1,25 @@
-
-
-
-
-
-
-
-
-
+## Purpose: To troubleshoot PoTRA code and make improvements where possible ##
+## Contributor: MLinan 
 
 PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile) {
-  
-  require(BiocGenerics)
-  require(graph)
-  require(graphite)
-  require(igraph)
+ ########code not used########
+ # require(BiocGenerics)
+ # require(graph)
+ # require(graphite)
+ # require(igraph)
+ ###############################
+ 
+ #### New code added by ML on 3.15.2018 ###
+ ## Will be tested today ##
+ devtools::use_package("BiocGenerics")
+ devtools::use_package("graph") 
+ devtools::use_package("graphite")
+ devtools::use_package("igraph")
+ devtools::use_package("org.Hs.eg.db") 
+ import::from(graphite, humanReactome, humanKEGG, humanBiocarta)
+ import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
+ 
+ ###########################################
   
   Fishertest<-c()
   TheNumOfHubGene.normal<-c()
@@ -144,10 +150,6 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
   }
   return(list(Fishertest.p.value=Fishertest,KStest.p.value=kstest,LengthOfPathway=length.pathway,TheNumberOfHubGenes.normal=TheNumOfHubGene.normal,TheNumOfHubGene.case=TheNumOfHubGene.case,TheNumberOfEdges.normal=E.union.normal,TheNumberOfEdges.case=E.union.case))
 }
-
-
-
-
 
 
 
