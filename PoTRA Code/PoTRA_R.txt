@@ -1,13 +1,13 @@
 ## Purpose: To troubleshoot PoTRA code and make improvements where possible ##
 ## Contributor: MLinan 
-## Add package root its needed for imports
+## Add package root its needed for imports (important:package ‘root’ is not available (for R Under development))
 
 PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile) {
  ########code not used########
  # require(BiocGenerics)
  # require(graph)
  # require(graphite)
- # require(igraph)
+ # require(igraph)https://github.com/GenomicsPrograms/PoTRA/blob/master/PoTRA%20Code/PoTRA_R.txt
  ###############################
  
  #### New code added by ML on 3.15.2018 ###
