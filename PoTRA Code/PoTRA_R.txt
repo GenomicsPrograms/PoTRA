@@ -1,5 +1,6 @@
 ## Purpose: To troubleshoot PoTRA code and make improvements where possible ##
 ## Contributor: MLinan 
+## Add package root its needed for imports
 
 PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile) {
  ########code not used########
