@@ -16,22 +16,7 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
  
 
  
-######## will not use this code by ML ############################################################
-# devtools::install_deps(deps = TRUE)
-# devtools::load_all()
- 
-# devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
-# devtools::use_package("graph", type = "Imports", pkg = ".")
-# devtools::use_package("graphite", type = "Imports", pkg = ".")
-# devtools::use_package("igraph", type = "Imports", pkg = ".")
-# devtools::use_package("org.Hs.eg.db", type = "Imports", pkg = ".") 
-  
-# import::from(graphite, humanReactome, humanKEGG, humanBiocarta, .into= graphite)
-# import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
- 
- 
- ##################################################################################################
-  
+
   Fishertest<-c()
   TheNumOfHubGene.normal<-c()
   TheNumOfHubGene.case<-c()
@@ -303,12 +288,6 @@ PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.
  return(list(Fishertest.p.value=Fishertest,KStest.p.value=kstest,LengthOfPathway=length.pathway,TheNumberOfHubGenes.normal=TheNumOfHubGene.normal,TheNumOfHubGene.case=TheNumOfHubGene.case,TheNumberOfEdges.normal=E.normal,TheNumberOfEdges.case=E.case))
 }
 
-
-
-
-
-
-
 overlayplot<-function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database) {
  
 require(BiocGenerics)
@@ -316,21 +295,7 @@ require(graph)
 require(graphite)
 require(igraph)
   
-  
-######## will not use this code by ML ############################################################
-# devtools::install_deps(deps = TRUE)
-# devtools::load_all()
  
-# devtools::use_package("BiocGenerics", type = "Imports", pkg = ".")
-# devtools::use_package("graph", type = "Imports", pkg = ".")
-# devtools::use_package("graphite", type = "Imports", pkg = ".")
-# devtools::use_package("igraph", type = "Imports", pkg = ".")
-# devtools::use_package("org.Hs.eg.db", type = "Imports", pkg = ".") 
-  
-# import::from(graphite, humanReactome, humanKEGG, humanBiocarta, .into= graphite)
-# import::into("", humanReactome, humanKEGG, humanBiocarta, .from = graphite)
-##################################################################################################
-  
   length.pathway<-c()
   
   humanReactome <- pathways("hsapiens", "reactome")
@@ -354,9 +319,7 @@ require(igraph)
       lines(density(s[[i]]), xlim = xr, ylim = yr, col = i)
     }
   }
-  ####code added by ML 3.15.2018 #######
-  print("Progress.......Setting Up")
-  ######################################
+ 
   
   p0 <-Pathway.database
   p <- convertIdentifiers(p0, "entrez")
@@ -367,10 +330,6 @@ require(igraph)
   
   length.pathway<-length(nodelist)
   
-   
-  ####code added by ML 3.15.2018 #######
-  print("Progress.......Collecting expression data of genes for a specific pathway across normal and tumor samples")
-  ######################################
   
   #collect expression data of genes for a specific pathway across normal and tumor samples.
   
@@ -383,11 +342,6 @@ require(igraph)
     path[j,]<-mydata[which(genelist==a[j]),]  #collect expression data of genes for a specific pathway across normal and tumor samples.
   }
   
-  
-  
-  ####code added by ML 3.15.2018 #######
-  print("Progress.......Constructing a gene-gene network for normal samples and calculate PageRank values for each gene in this network")
-  ######################################
   
   #Construct a gene-gene network for normal samples and calculate PageRank values for each gene in this network.
   
@@ -404,10 +358,6 @@ require(igraph)
   
   PR.normal<-page.rank(graph.normal,direct=FALSE)
   
- 
-  #######code added by ML 3.15.2018 #######
-  print("Progress.......Constructing a gene-gene network for tumor samples and calculate PageRank values for each gene in this network")
-  #########################################
   
   #Construct a gene-gene network for tumor samples and calculate PageRank values for each gene in this network.
   
@@ -422,7 +372,7 @@ require(igraph)
   graph.case<-graph.adjacency(cor.case.adj,weighted=TRUE,mode="undirected")
   
   #######code added by ML 3.15.2018 #######
-  print("Progress.......Preparing Results")
+  print("Preparing Results")
   #########################################
   PR.case<-page.rank(graph.case,direct=FALSE)
   
