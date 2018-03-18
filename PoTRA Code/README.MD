@@ -14,7 +14,7 @@ library(graphite) <br>
 library(igraph) <br>
 
 <b>Choose your database before running the PoTRA.cor commandline: <br> </b>
-humanKEGG <- pathways("hsapiens", "kegg") 
+<code>humanKEGG <- pathways("hsapiens", "kegg") </code>
 
 
 <b>For PoTRA (Fisher’s exact test and K.S. test) based on correlation networks:</b> <br>
@@ -35,13 +35,38 @@ humanKEGG <- pathways("hsapiens", "kegg")
 
 # Arguments
 
-mydata:	a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case)
-genelist:	a list of gene names
-Num.sample.normal:	the number of normal samples
-Num.sample.case:	the number of cancer samples
-Pathway.database:	the pathway database used in the study, such as, KEGG, Biocarta and Reactome
-PR.quantile:	The percentile of PageRank scores as a cutoff for hub genes
-Value
+<html>
+<body>
+
+<table>
+   <tr>
+    <th>mydata</th>
+    <th>A gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case)</th>
+   </tr>
+   <tr>
+    <td>genelist</td>
+    <td>A list of gene names</td>
+   </tr>
+    <tr>
+    <td>Num.sample.normal</td>
+    <td>The number of normal samples</td>
+   </tr>
+   <tr>
+    <td>Pathway.database</td>
+    <td>The pathway database used in the study, such as, KEGG, Biocarta and Reactome</td>
+   </tr>
+    <tr>
+    <td>PR.quantile</td>
+    <td>The percentile of PageRank scores as a cutoff for hub genes </td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+
+    
+<b>Value</b>
 
  
 
