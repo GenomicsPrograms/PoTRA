@@ -12,7 +12,9 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
  require(BiocGenerics)
  require(graph)
  require(graphite)
- require(igraph)https://github.com/GenomicsPrograms/PoTRA/blob/master/PoTRA%20Code/PoTRA_R.txt
+ require(igraph)
+ 
+
  
 ######## will not use this code by ML ############################################################
 # devtools::install_deps(deps = TRUE)
