@@ -1,19 +1,4 @@
 
-
-**PoTRA.R**
-
-The R script to perform the main part (Fisher’s exact test) of PoTRA, the alternative part (K.S. test) of PoTRA, and the overlay plot of kernel density for the PR scores.
-
-**PoTRA-example.R**
-
-Example usage of PoTRA.R
-
-**PoTRA-example-data.Rdata**
-
-Data used in PoTRA-example.R
-
- 
-
 # Usage <br>
 
 The R script to perform the main part (Fisher’s exact test) of PoTRA, the alternative part (K.S. test) of PoTRA, and the overlay plot of kernel density for the PR scores: <b>PoTRA.R</b><br>
