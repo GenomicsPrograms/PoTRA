@@ -1,6 +1,5 @@
 
 
-
 **PoTRA.R**
 
 The R script to perform the main part (Fisher’s exact test) of PoTRA, the alternative part (K.S. test) of PoTRA, and the overlay plot of kernel density for the PR scores.
@@ -15,7 +14,7 @@ Data used in PoTRA-example.R
 
  
 
-#Usage
+# Usage <br>
 library(BiocGenerics) <br>
 library(graph) <br>
 library(graphite) <br>
@@ -25,21 +24,23 @@ library(igraph) <br>
 humanKEGG <- pathways("hsapiens", "kegg") 
 
 
-For PoTRA (Fisher’s exact test and K.S. test) based on correlation networks:
+<b>For PoTRA (Fisher’s exact test and K.S. test) based on correlation networks:</b> <br>
 
-PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile)
+<code>PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile)</code>
 
-For PoTRA (Fisher’s exact test and K.S. test) based on combined networks:
 
-PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)
 
-For the kernel density plot:
+<b>For PoTRA (Fisher’s exact test and K.S. test) based on combined networks:</b> <br>
 
-results.plot <- overlayplot(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)
+<code>PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)</code>
+
+<b>For the kernel density plot:<b> <br>
+
+<code>results.plot <- overlayplot(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)</code>
 
  
 
-**Arguments**
+# Arguments
 
 mydata:	a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case)
 genelist:	a list of gene names
@@ -71,8 +72,7 @@ TheNumberOfEdges.case: the number of edges in the network for cancer samples.
 See PoTRA-example.R
 
  
-
-**Credits**
+# Credits
 
 Authors: Chaoxing Li, Li Liu and Valentin Dinu
 
