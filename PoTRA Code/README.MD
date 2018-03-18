@@ -40,8 +40,8 @@ library(igraph) <br>
 
 <table>
    <tr>
-    <th>mydata</th>
-    <th>A gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case)</th>
+    <td>mydata</td>
+    <td>A gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case)</td>
    </tr>
    <tr>
     <td>genelist</td>
@@ -64,28 +64,54 @@ library(igraph) <br>
 </body>
 </html>
 
-
-    
+   
 <b>Value</b>
 
  
+<html>
+<body>
 
-Fishertest.p.value: the p-value of the Fisher’s exact test.
+<table>
+   <tr>
+    <td>Fishertest.p.value</td>
+    <td>The p-value of the Fisher’s exact test</td>
+   </tr>
+   <tr>
+    <td>KStest.p.value</td>
+    <td>The p-value of the K.S. test</td>
+   </tr>
+    <tr>
+    <td>LengthOfPathway</td>
+    <td>The length of pathways</td>
+   </tr>
+   <tr>
+    <td>TheNumberOfHubGenes.normal</td>
+    <td>the number of hub genes for normal samples</td>
+   </tr>
+    <tr>
+    <td>PR.quantile</td>
+    <td>The percentile of PageRank scores as a cutoff for hub genes </td>
+    </tr>
+    <tr>
+    <td>TheNumOfHubGene.case</td>
+    <td>The number of hub genes for cancer samples </td>
+    </tr>
+    <tr>
+    <td>TheNumberOfEdges.normal</td>
+    <td>The number of edges in the network for normal samples</td>
+    </tr>
+    <tr>
+    <td>TheNumberOfEdges.case</td>
+    <td>The number of edges in the network for cancer samples </td>
+    </tr>
+</table>
 
-KStest.p.value: the p-value of the K.S. test.
-
-LengthOfPathway: the length of pathways.
-
-TheNumberOfHubGenes.normal: the number of hub genes for normal samples.
-
-TheNumOfHubGene.case: the number of hub genes for cancer samples.
-
-TheNumberOfEdges.normal: the number of edges in the network for normal samples.
-
-TheNumberOfEdges.case: the number of edges in the network for cancer samples.
+</body>
+</html>
+ 
 
 
-**Examples**
+<b>Examples </b>
 
 See PoTRA-example.R
 
@@ -96,12 +122,12 @@ Authors: Chaoxing Li, Li Liu and Valentin Dinu
 
  
 
-If you use or modify the code, please cite:
+<b>If you use or modify the code, please cite:</b>
 
 “Pathways of Topological Rank Analysis (PoTRA): A Novel Method to Detect Pathways Involved in Cancer”, 2018.
 
  
 
-**Issues?**
+<b>Issues?</b>
 
 Please email Chaoxing Li <chaoxing@asu.edu> or Valentin Dinu <Valentin.Dinu@asu.edu> if you have any questions, concerns or feedback.
