@@ -1,3 +1,6 @@
+
+
+
 **PoTRA.R**
 
 The R script to perform the main part (Fisher’s exact test) of PoTRA, the alternative part (K.S. test) of PoTRA, and the overlay plot of kernel density for the PR scores.
@@ -12,7 +15,15 @@ Data used in PoTRA-example.R
 
  
 
-**Usage**
+#Usage
+library(BiocGenerics) <br>
+library(graph) <br>
+library(graphite) <br>
+library(igraph) <br>
+
+<b>Choose your database before running the PoTRA.cor commandline: <br> </b>
+humanKEGG <- pathways("hsapiens", "kegg") 
+
 
 For PoTRA (Fisher’s exact test and K.S. test) based on correlation networks:
 
