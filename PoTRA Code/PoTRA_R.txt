@@ -4,8 +4,9 @@
 ##
 ##
 ## History of error messages
-## 1 :: Add package root its needed for imports (important:package ‘root’ is not available (for R Under development))
-## 2 :: Error: Could not find package root
+## 1 :: Add package root its needed for imports (important:package ‘root’ is not available (for R Under development))[resolved by specifying ##      the pathway db before running the main commandline]
+## 2 :: Error: Could not find package root [resolved by specifying the pathway db before running the main commandline]
+## 3 :: Error in PoTRA.cor(mydata = mydata, genelist = genelist, Num.sample.normal = 8, :  object 'kstest' not found
 
 PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile) {
 
