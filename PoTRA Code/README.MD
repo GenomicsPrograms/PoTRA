@@ -21,7 +21,7 @@ library(igraph) <br>
 
 <code>PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile)</code>
  
-<b>Example Usage: </b>
+<b>Example Usage: </b><br>
 <code>results.cor <-PoTRA.cor(mydata=mydata,genelist=genelist,Num.sample.normal=8,Num.sample.case=8,Pathway.database=humanKEGG[1:10],PR.quantile=0.95)</code>
 
 
@@ -29,13 +29,18 @@ library(igraph) <br>
 
 <code>PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)</code>
 
-<b>Example Usage: </b>
+<b>Example Usage: </b><br>
 <code>results.comb <-PoTRA.comb(mydata=mydata,genelist=genelist,Num.sample.normal=8,Num.sample.case=8,Pathway.database=humanKEGG[1:10],PR.quantile=0.95)</code>
+
+
 <b>For the kernel density plot:</b> <br>
 
 <code>results.plot <- overlayplot(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)</code>
 
  
+<b>Example Usage: </b><br>
+
+<code>results.plot <- overlayplot(mydata=mydata,genelist=genelist,Num.sample.normal=8,Num.sample.case=8,Pathway.database=humanKEGG[[1]])</code>
 
 # Arguments
 
