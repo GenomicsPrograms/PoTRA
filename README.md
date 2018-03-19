@@ -1,11 +1,8 @@
 # PoTRA 
----
 
-
-----------
 PoTRA is a PageRank-based method that can be used to detect pathways involved in disease.
 
-For information about the method, please read:
+<b> For information about the method, please read: </b>
 
 Chaoxing Li, Li Liu and Valentin Dinu. “Pathways of Topological Rank Analysis (PoTRA): A Novel Method to Detect Pathways Involved in Cancer”, 2018
 
