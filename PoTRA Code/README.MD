@@ -65,7 +65,7 @@ library(igraph) <br>
 </html>
 
    
-<b>Value</b>
+# Values
 
  
 <html>
