@@ -20,13 +20,17 @@ library(igraph) <br>
 <b>For PoTRA (Fisher’s exact test and K.S. test) based on correlation networks:</b> <br>
 
 <code>PoTRA.cor <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database, PR.quantile)</code>
-
+ 
+<b>Example Usage: </b>
+<code>results.cor <-PoTRA.cor(mydata=mydata,genelist=genelist,Num.sample.normal=8,Num.sample.case=8,Pathway.database=humanKEGG[1:10],PR.quantile=0.95)</code>
 
 
 <b>For PoTRA (Fisher’s exact test and K.S. test) based on combined networks:</b> <br>
 
 <code>PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)</code>
 
+<b>Example Usage: </b>
+<code>results.comb <-PoTRA.comb(mydata=mydata,genelist=genelist,Num.sample.normal=8,Num.sample.case=8,Pathway.database=humanKEGG[1:10],PR.quantile=0.95)</code>
 <b>For the kernel density plot:</b> <br>
 
 <code>results.plot <- overlayplot(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway.database)</code>
