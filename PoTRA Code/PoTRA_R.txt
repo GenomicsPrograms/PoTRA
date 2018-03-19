@@ -15,7 +15,7 @@ PoTRA.comb <- function(mydata,genelist,Num.sample.normal,Num.sample.case,Pathway
  require(graphite)
  require(igraph)
  
-
+  kstest<-c()
   Fishertest<-c()
   TheNumOfHubGene.normal<-c()
   TheNumOfHubGene.case<-c()
