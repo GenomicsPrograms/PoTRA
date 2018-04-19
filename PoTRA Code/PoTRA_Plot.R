@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+## ML: Added code so that the program can be called via the commandline
 args = commandArgs(trailingOnly=TRUE)
 
 # test if there is at least one argument: if not, return an error
